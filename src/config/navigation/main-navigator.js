@@ -105,7 +105,8 @@ const AppNavigator = createStackNavigator({
           );
         },
       }),
-      navigationOptions: ({navigation}) => searchHeader(navigation, 'shopo'),
+      navigationOptions: ({navigation}) =>
+        searchHeader(navigation, 'Marketplace'),
       tabBarOptions: {
         inactiveTintColor: DefaultTheme.gray,
         activeTintColor: DefaultTheme.primary,

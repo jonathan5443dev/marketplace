@@ -1,5 +1,5 @@
 export default {
-  primary: '#DB3022',
+  primary: '#2ECC71',
   background: '#F9F9F9',
   black: '#222222',
   gray: '#9B9B9B',
@@ -9,7 +9,7 @@ export default {
   pureWhite: '#FFFFFF',
   red: '#EB001B',
   green: '#2AA952',
-  fontFamily: 'Metropolis-Regular',
-  fontFamilyBold: 'Metropolis-Bold',
-  fontFamilySemiBold: 'Metropolis-SemiBold',
+  fontFamily: 'Poppins-Regular',
+  fontFamilyBold: 'Poppins-Bold',
+  fontFamilySemiBold: 'Poppins-SemiBold',
 };

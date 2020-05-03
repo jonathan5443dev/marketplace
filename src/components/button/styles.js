@@ -38,6 +38,7 @@ export const ButtonText = styled.Text`
   text-align: center;
   text-transform: uppercase
   font-size: 16px;
+  font-family: ${theme.fontFamilyBold};
 `;
 
 export const ButtonOutlinedContainer = styled.TouchableOpacity`
