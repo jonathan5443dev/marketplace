@@ -1,43 +1,33 @@
 import React from 'react';
-
-import ProductsCarousel from '../../components/products-carousel/products-carousel';
+import Text from '../../components/text/text';
 import Container from '../../components/container/container';
-import Slider from '../../components/slider/slider';
-import {ProductsContainer} from './styles';
+import Search from '../../components/search/search';
+import Header from './header';
+import gradient from '../../assets/images/gradient.png';
+import {Category, CategoryImage, Tag, Overlay} from './styles';
 
 const Home = ({navigation}) => {
-  const products = navigation.state.params.products;
-  console.log(products);
-  const slides = [
-    {
-      url: 'https://picsum.photos/600/300',
-      text: 'Summer sales',
-    },
-    {
-      url: 'https://picsum.photos/600/300',
-      text: 'Winter sales',
-    },
-  ];
+  const categories = navigation.state.params.categories;
   return (
     <Container>
-      <Slider slides={slides} />
-      <ProductsContainer>
-        <ProductsCarousel
-          products={products.sales}
-          title="Sale"
-          titleDescription="Super summer sale"
-        />
-        <ProductsCarousel
-          products={products.news}
-          title="New"
-          titleDescription="New summer clothes"
-        />
-        <ProductsCarousel
-          products={products.pants}
-          title="Pants"
-          titleDescription="New pants"
-        />
-      </ProductsContainer>
+      <Header />
+      <Search placeholder={'Què quieres hoy?'} />
+      {categories.map(category => (
+        <Category>
+          <CategoryImage source={{uri: category.image}}>
+            <Overlay source={gradient} />
+            <Text type="headline 2" color="white">
+              {category.name}
+            </Text>
+            <Text color="white">{category.count} productos y servicios</Text>
+            {category.isNew && (
+              <Tag>
+                <Text>Nueva</Text>
+              </Tag>
+            )}
+          </CategoryImage>
+        </Category>
+      ))}
     </Container>
   );
 };
