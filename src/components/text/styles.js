@@ -10,12 +10,12 @@ const styleByType = type => {
       };
     case 'headline 2':
       return {
-        'font-family': theme.fontFamilySemiBold,
+        'font-family': theme.fontFamilyBold,
         'font-size': '24px',
       };
     case 'headline 3':
       return {
-        'font-family': theme.fontFamilySemiBold,
+        'font-family': theme.fontFamilyBold,
         'font-size': '18px',
       };
     case 'small':
@@ -57,5 +57,4 @@ export const FancyText = styled.Text`
   ${$props => styleByType($props.type)}
   color: ${props => theme[props.color]};
   text-decoration-color: ${props => theme[props.color]};
-  margin-vertical: 3px;
 `;
