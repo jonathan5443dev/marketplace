@@ -15,6 +15,8 @@ import Addresses from '../../screens/addresses/addresses';
 import CreateAddress from '../../screens/create-address/create-address';
 
 import SuppliersList from '../../screens/suppliers-list/suppliers-list';
+import SupplierDetail from '../../screens/supplier-detail/supplier-detail';
+
 import Profile from '../../screens/profile/profile';
 import Checkout from '../../screens/checkout/checkout';
 import ProfileSettings from '../../screens/profile-settings/profile-settings';
@@ -75,8 +77,8 @@ const AppNavigator = createStackNavigator({
       Home: {
         screen: Home,
       },
-      SuppliersList: {
-        screen: SuppliersList,
+      SupplierDetail: {
+        screen: SupplierDetail,
       },
       Bag: {
         screen: Bag,
