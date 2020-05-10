@@ -14,9 +14,8 @@ import Bag from '../../screens/bag/bag';
 import Addresses from '../../screens/addresses/addresses';
 import CreateAddress from '../../screens/create-address/create-address';
 
-import Categories from '../../screens/categories/categories';
+import SuppliersList from '../../screens/suppliers-list/suppliers-list';
 import Profile from '../../screens/profile/profile';
-import CategoryDetail from '../../screens/category-detail/category-detail';
 import Checkout from '../../screens/checkout/checkout';
 import ProfileSettings from '../../screens/profile-settings/profile-settings';
 
@@ -76,19 +75,9 @@ const AppNavigator = createStackNavigator({
       Home: {
         screen: Home,
       },
-      Categories: createStackNavigator(
-        {
-          Categories: {
-            screen: Categories,
-          },
-          CategoryDetail: {
-            screen: CategoryDetail,
-          },
-        },
-        {
-          headerMode: 'none',
-        },
-      ),
+      SuppliersList: {
+        screen: SuppliersList,
+      },
       Bag: {
         screen: Bag,
       },
