@@ -23,6 +23,11 @@ const styleByType = type => {
         'font-family': theme.fontFamily,
         'font-size': '11px',
       };
+    case 'smallBold':
+      return {
+        'font-family': theme.fontFamilyBold,
+        'font-size': '11px',
+      };
     case 'body':
       return {
         'font-family': theme.fontFamily,

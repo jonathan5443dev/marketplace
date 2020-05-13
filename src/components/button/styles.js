@@ -20,8 +20,8 @@ export const ButtonContainer = styled.TouchableOpacity`
   align-self: center;
   width: 100%;
   border-radius: 25px;
-  height: 48px;
-  padding: 10px;
+  height: 40px;
+  padding-horizontal: 16px;
   shadow-color: ${theme.black};
   shadow-offset: 0px 4px;
   shadow-opacity: 0.1;
@@ -36,37 +36,8 @@ export const ButtonContainer = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   color: ${props => (props.color === 'primary' ? theme.white : theme.black)};
   text-align: center;
-  text-transform: uppercase
-  font-size: 16px;
+  font-size: 15px;
   font-family: ${theme.fontFamilyBold};
-`;
-
-export const ButtonOutlinedContainer = styled.TouchableOpacity`
-  margin-vertical: 10px;
-  border-color: ${props => theme[props.color]};
-  border-width: 1.5px;
-  justify-content: center;
-  align-content: center;
-  width: 100%;
-  border-radius: 25px;
-  height: 40px;
-  opacity: ${props => (props.disabled ? '0.2' : '1')};
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-`;
-
-export const ButtonOutlinedText = styled.Text`
-  color: ${props => (props.color === 'primary' ? theme.white : theme.black)};
-  text-align: center;
-  font-size: 16px;
-`;
-
-export const IconOutlined = styled.Image`
-  height: 18px;
-  width: 18px;
-  resize-mode: contain;
-  tint-color: ${props => theme[props.color]};
 `;
 
 export const Icon = styled.Image`
