@@ -6,6 +6,8 @@ import ProductCard from '../../components/product-card/product-card';
 import theme from '../../config/themes/default';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import ProductDetail from '../product-detail/product-detail';
+
 import {
   faSignLanguage,
   faShare,
@@ -99,6 +101,7 @@ const SupplierDetail = () => {
           <ProductCard product={product} />
         ))}
       </Products>
+      <ProductDetail visible={true} product={products[0]} />
     </Container>
   );
 };

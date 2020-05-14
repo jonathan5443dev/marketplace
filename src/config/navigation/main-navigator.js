@@ -5,7 +5,12 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 
 import DefaultTheme from '../themes/default';
-import {emptyHeader, searchHeader, titleHeader} from './styles';
+import {
+  emptyHeader,
+  searchHeader,
+  titleHeader,
+  headerWithCloseButton,
+} from './styles';
 import Login from '../../screens/login/login';
 import RecoveryPassword from '../../screens/recovery-password/recovery-password';
 import SingUp from '../../screens/sing-up/sing-up';
@@ -57,11 +62,6 @@ const AppNavigator = createStackNavigator({
   ProfileSettings: {
     screen: ProfileSettings,
     navigationOptions: ({navigation}) => searchHeader(navigation, 'Settings'),
-  },
-  ProductDetail: {
-    screen: ProductDetail,
-    navigationOptions: ({navigation}) =>
-      searchHeader(navigation, 'Product Detail'),
   },
   Orders: {
     screen: Orders,

@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 import theme from '../../config/themes/default';
 
+export const Modal = styled.Modal``;
+
 export const OpenModal = styled.TouchableOpacity`
   background-color: ${theme.white};
   padding-vertical: 10px;
@@ -45,3 +47,23 @@ export const ContainerButton = styled.View`
 `;
 
 export const ContentScrollable = styled.ScrollView``;
+
+export const BackgroundImage = styled.Image`
+  border-radius: 400px;
+  width: 140%;
+  height: 500px;
+  position: absolute;
+  top: -300px;
+  left: -90px;
+`;
+
+export const CloseButton = styled.View``;
+
+export const HeaderContainer = styled.View`
+  background-color: transparent;
+  padding-top: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const ShareButton = styled.View``;
