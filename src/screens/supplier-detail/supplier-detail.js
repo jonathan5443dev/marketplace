@@ -21,6 +21,7 @@ const products = [
     image: 'https://picsum.photos/seed/hamburgers/300/300',
     price: 20000,
     isNew: true,
+    quantity: 1,
   },
   {
     name: 'Passport series',
@@ -28,6 +29,7 @@ const products = [
     image: 'https://picsum.photos/seed/potatos/300/300',
     price: 20000,
     isNew: true,
+    quantity: 1,
   },
   {
     name: 'Caffe Mocha',
@@ -35,6 +37,7 @@ const products = [
     image: 'https://picsum.photos/seed/magics/300/300',
     price: 20000,
     isNew: true,
+    quantity: 1,
   },
   {
     name: 'Passport series',
@@ -42,6 +45,7 @@ const products = [
     image: 'https://picsum.photos/seed/rudolf/300/300',
     price: 20000,
     isNew: true,
+    quantity: 1,
   },
 ];
 

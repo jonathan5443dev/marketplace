@@ -31,14 +31,17 @@ export const Price = styled.View`
   flex: 1;
 `;
 
-export const ContainerButton = styled.View`
+export const ContainerCounter = styled.View`
   position: absolute;
   bottom: 0;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
   padding-horizontal: 20px;
-  padding-vertical: 10px;
+  padding-vertical: 20px;
+  flex-direction: row;
+`;
+
+export const ContainerButton = styled.View`
+  margin-left: 10px;
+  flex: 1;
 `;
 
 export const ContentScrollable = styled.ScrollView``;
