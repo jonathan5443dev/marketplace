@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useTranslation} from 'react-i18next';
 
 import Text from '../../components/text/text';
@@ -35,7 +35,15 @@ const ProductDetail = ({navigation}) => {
               <Text type="headline 2">{product.name}</Text>
             </Tags.NameAndBrand>
           </Tags.BasicInformation>
-          <Text type="description">{product.description}</Text>
+          <Text type="description" color="gray">
+            {product.description}
+          </Text>
+          <Text type="description" color="gray">
+            {product.description}
+          </Text>
+          <Text type="description" color="gray">
+            {product.description}
+          </Text>
         </Tags.ContentScrollable>
       </Container>
       <Tags.ContainerCounter>

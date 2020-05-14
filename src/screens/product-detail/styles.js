@@ -35,7 +35,7 @@ export const ContainerCounter = styled.View`
   position: absolute;
   bottom: 0;
   padding-horizontal: 20px;
-  padding-vertical: 20px;
+  padding-vertical: 40px;
   flex-direction: row;
 `;
 
