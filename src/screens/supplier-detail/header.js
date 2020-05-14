@@ -1,19 +1,14 @@
 import React from 'react';
 import {Header, Back, ShoppingCart, Address} from './styles';
-import Text from '../../components/text/text';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faArrowLeft, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
-const HeaderSuppliersList = () => {
+const HeaderSupplierDetail = () => {
   return (
     <Header>
       <Back onPress={() => {}}>
-        <FontAwesomeIcon icon={faArrowLeft} style={{marginLeft: 16}} />
+        <FontAwesomeIcon icon={faArrowLeft} style={{color: 'white'}} />
       </Back>
-      <Address>
-        <Text type="highlight"> Carrera 16 # 96 - 71 </Text>
-        <Text type="small">&#9660;</Text>
-      </Address>
       <ShoppingCart onPress={() => {}}>
         <FontAwesomeIcon icon={faShoppingCart} style={{color: 'gray'}} />
       </ShoppingCart>
@@ -21,4 +16,4 @@ const HeaderSuppliersList = () => {
   );
 };
 
-export default HeaderSuppliersList;
+export default HeaderSupplierDetail;
