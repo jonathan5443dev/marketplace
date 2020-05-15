@@ -3,11 +3,12 @@ import theme from '../../config/themes/default';
 
 export const InputContainer = styled.View`
   width: 100%;
-  height: 64px;
+  height: ${props => (props.multiline ? '100px' : '64px')};
   background-color: white;
-  border-radius: 4px;
+  border-radius: 8px;
   border-width: 1px;
   margin-bottom: 6px;
+  margin-top: 6px;
   padding-bottom: 5px;
   border-color: ${props => props.borderColor};
   shadow-color: ${theme.black};

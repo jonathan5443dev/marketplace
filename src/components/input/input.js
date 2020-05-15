@@ -29,12 +29,12 @@ const Input = props => {
     if (error) {
       return theme.primary;
     }
-    return theme.black;
+    return theme.gray;
   };
 
   return (
     <>
-      <InputContainer borderColor={inputColor()}>
+      <InputContainer borderColor={inputColor()} multiline={props.multiline}>
         {icon && (
           <IconContainer borderColor={inputColor()}>
             <Icon source={icon} tintColor={inputColor()} />
@@ -49,6 +49,8 @@ const Input = props => {
           onBlur={() => setIsFocus(false)}
           placeholderTextColor={inputColor()}
           autoCapitalize="none"
+          multiline={props.multiline}
+          numberOfLines={4}
         />
       </InputContainer>
       {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -61,12 +63,14 @@ Input.propTypes = {
   icon: PropTypes.number,
   editable: PropTypes.bool,
   label: PropTypes.string.isRequired,
+  multiline: PropTypes.bool,
 };
 
 Input.defaultProps = {
   error: undefined,
   icon: undefined,
   editable: true,
+  multiline: false,
 };
 
 export default Input;

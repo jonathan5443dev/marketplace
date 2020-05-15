@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import theme from '../../config/themes/default';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -10,7 +11,7 @@ export const Quantity = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-  background-color: #ffffff;
+  background-color: ${props => theme[props.color]};
   border-radius: 18px;
   justify-content: center;
   align-items: center;
