@@ -12,14 +12,9 @@ import {
   ButtonContainer,
 } from './styles';
 
-import productActions from '../../redux/reducers/product';
-
-const ProductCard = ({product}) => {
-  const dispatch = useDispatch();
-
+const ProductCard = ({product, onPress}) => {
   return (
-    <Container
-      onPress={() => dispatch(productActions.startProductDetailFlow(product))}>
+    <Container onPress={onPress}>
       <ProductDescription>
         <Text type="highlight">{product.name}</Text>
         <Text color="gray" type="small">
@@ -45,6 +40,7 @@ ProductCard.propTypes = {
     isNew: PropTypes.bool,
     likes: PropTypes.number,
   }),
+  onPress: PropTypes.func.isRequired,
 };
 
 ProductCard.defaultProps = {

@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faTimes} from '@fortawesome/free-solid-svg-icons';
+import {faTimes, faShareAlt} from '@fortawesome/free-solid-svg-icons';
 
 import * as Tags from './styles';
 
@@ -10,15 +11,24 @@ const iconStyle = {
   color: 'white',
 };
 
-const ProductDetailHeader = () => (
+const ProductDetailHeader = ({onRequestClose, onShare}) => (
   <Tags.HeaderContainer>
-    <Tags.CloseButton>
-      <FontAwesomeIcon icon={faTimes} style={iconStyle} />
+    <Tags.CloseButton onPress={onRequestClose}>
+      <FontAwesomeIcon icon={faTimes} style={iconStyle} size={30} />
     </Tags.CloseButton>
-    <Tags.ShareButton>
-      <FontAwesomeIcon icon={faTimes} style={iconStyle} />
+    <Tags.ShareButton onPress={onShare}>
+      <FontAwesomeIcon icon={faShareAlt} style={iconStyle} size={30} />
     </Tags.ShareButton>
   </Tags.HeaderContainer>
 );
+
+ProductDetailHeader.propTypes = {
+  onRequestClose: PropTypes.func.isRequired,
+  onShare: PropTypes.func,
+};
+
+ProductDetailHeader.defaultProps = {
+  onShare: () => {},
+};
 
 export default ProductDetailHeader;

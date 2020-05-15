@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Container from '../../components/container/container';
 import Header from './header';
 import Text from '../../components/text/text';
@@ -52,6 +52,14 @@ const products = [
 ];
 
 const SupplierDetail = () => {
+  const [isModalOpen, toggleProductDetail] = useState(false);
+  const [productDetail, setProductDetail] = useState({});
+
+  const openProductDetail = product => {
+    setProductDetail(product);
+    toggleProductDetail(true);
+  };
+
   return (
     <Container>
       <Header />
@@ -98,10 +106,17 @@ const SupplierDetail = () => {
       </Detail>
       <Products>
         {products.map(product => (
-          <ProductCard product={product} />
+          <ProductCard
+            product={product}
+            onPress={() => openProductDetail(product)}
+          />
         ))}
       </Products>
-      <ProductDetail visible={true} product={products[0]} />
+      <ProductDetail
+        visible={isModalOpen}
+        product={productDetail}
+        onRequestClose={() => toggleProductDetail(false)}
+      />
     </Container>
   );
 };

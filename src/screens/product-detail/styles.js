@@ -57,7 +57,7 @@ export const BackgroundImage = styled.Image`
   left: -90px;
 `;
 
-export const CloseButton = styled.View``;
+export const CloseButton = styled.TouchableOpacity``;
 
 export const HeaderContainer = styled.View`
   background-color: transparent;
@@ -66,4 +66,4 @@ export const HeaderContainer = styled.View`
   justify-content: space-between;
 `;
 
-export const ShareButton = styled.View``;
+export const ShareButton = styled.TouchableOpacity``;

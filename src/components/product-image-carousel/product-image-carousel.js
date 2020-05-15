@@ -9,6 +9,8 @@ const dotStyle = {
   width: 20,
   height: 20,
   borderRadius: 10,
+  borderColor: theme.grayLight,
+  borderWidth: 5,
   marginHorizontal: 8,
   backgroundColor: theme.primary,
 };
@@ -18,6 +20,7 @@ const inactiveDotStyle = {
   height: 20,
   borderRadius: 10,
   marginHorizontal: 8,
+  borderWidth: 0,
   backgroundColor: theme.gray,
 };
 
@@ -30,6 +33,7 @@ const ProducImageCarousel = ({images}) => {
       dotStyle={dotStyle}
       inactiveDotScale={0.7}
       inactiveDotStyle={inactiveDotStyle}
+      inactiveDotOpacity={0.5}
     />
   );
 

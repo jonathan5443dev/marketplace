@@ -10,6 +10,7 @@ import ProductImageCarousel from '../../components/product-image-carousel/produc
 import Counter from '../../components/counter/counter';
 import shoppingCartActions from '../../redux/reducers/shopping-cart';
 import ProductDetailHeader from './product-detail-header';
+import Input from '../../components/input/input';
 import * as Tags from './styles';
 
 import product1 from '../../assets/images/product.png';
@@ -23,7 +24,7 @@ const images = [
   {id: 3, resource: product3},
 ];
 
-const ProductDetail = ({visible, onRequestClose, product}) => {
+const ProductDetail = ({visible, onRequestClose, product, onShare}) => {
   const {t} = useTranslation();
   const dispatch = useDispatch();
 
@@ -31,7 +32,10 @@ const ProductDetail = ({visible, onRequestClose, product}) => {
     <>
       <Tags.Modal animationType="slide" transparent={false} visible={visible}>
         <Tags.BackgroundImage source={bg} />
-        <ProductDetailHeader />
+        <ProductDetailHeader
+          onRequestClose={onRequestClose}
+          onShare={onShare}
+        />
         <ProductImageCarousel images={images} />
         <Container>
           <Tags.ContentScrollable>
@@ -50,6 +54,9 @@ const ProductDetail = ({visible, onRequestClose, product}) => {
               {product.description}
             </Text>
           </Tags.ContentScrollable>
+          <>
+            <Input label="Comentarios o instrucciones" multiline={true} />
+          </>
         </Container>
         <Tags.ContainerCounter>
           <Counter product={product} color="primary" />
@@ -69,10 +76,13 @@ const ProductDetail = ({visible, onRequestClose, product}) => {
 
 ProductDetail.propTypes = {
   product: PropTypes.node.isRequired,
+  onShare: PropTypes.func,
+  onRequestClose: PropTypes.func.isRequired,
 };
 
 ProductDetail.defaultProps = {
   visible: true,
+  onShare: () => {},
 };
 
 export default ProductDetail;
