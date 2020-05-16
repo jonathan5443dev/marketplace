@@ -7,7 +7,8 @@ export const Container = styled.View`
 `;
 
 export const Quantity = styled.View`
-  padding: 16px;
+  padding-horizontal: 16px;
+  padding-vertical: 8px;
 `;
 
 export const Button = styled.TouchableOpacity`

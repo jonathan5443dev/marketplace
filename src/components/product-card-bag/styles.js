@@ -1,21 +1,27 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  height: 105px;
+  height: 118px;
   width: 100%;
   border-radius: 15px;
   margin-vertical: 8px;
   background-color: #ffffff;
-  overflow: hidden;
   flex-direction: row;
+  shadow-color: #000;
+  shadow-offset: 1px 2px;
+  shadow-opacity: 0.05;
+  shadow-radius: 4.84px;
+  elevation: 3;
 `;
 export const ImageContainer = styled.View`
   width: 30%;
-  height: 104px;
+  height: 118px;
 `;
 
 export const ProductImage = styled.Image`
   width: 100%;
+  border-radius: 15px;
+  height: 100%;
 `;
 
 export const DetailContainer = styled.View`
@@ -23,15 +29,13 @@ export const DetailContainer = styled.View`
 `;
 
 export const Detail = styled.View`
-  padding-vertical: 8px;
+  padding-vertical: 16px;
   padding-horizontal: 16px;
   width: 70%;
 `;
 
-export const Price = styled.View`
-  position: absolute;
-  right: 16px;
-  bottom: 12px;
+export const CounterContainer = styled.View`
+  align-items: flex-end;
 `;
 
 export const Options = styled.TouchableOpacity`

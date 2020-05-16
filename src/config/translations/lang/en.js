@@ -15,8 +15,10 @@ export default {
     title: 'Bag',
     detail: 'Detail: ',
     checkout: 'Check out',
-    total: 'Total amount',
+    total: 'Total: ',
+    clear: 'Empty orders',
     empty: 'Empty',
+    confirm: 'Confirm order',
   },
   profile: {
     title: 'My profile',
