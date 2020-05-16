@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  height: 105px;
+  height: 118px;
   width: 100%;
   border-radius: 15px;
   margin-vertical: 8px;
@@ -11,11 +11,13 @@ export const Container = styled.View`
 `;
 export const ImageContainer = styled.View`
   width: 30%;
-  height: 104px;
+  height: 118px;
 `;
 
 export const ProductImage = styled.Image`
   width: 100%;
+  border-radius: 15px;
+  height: 100%;
 `;
 
 export const DetailContainer = styled.View`
