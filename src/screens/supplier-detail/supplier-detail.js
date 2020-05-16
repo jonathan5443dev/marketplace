@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Container from '../../components/container/container';
 import Header from './header';
 import Text from '../../components/text/text';
@@ -6,6 +6,8 @@ import ProductCard from '../../components/product-card/product-card';
 import theme from '../../config/themes/default';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import ProductDetail from '../product-detail/product-detail';
+
 import {
   faSignLanguage,
   faShare,
@@ -21,6 +23,7 @@ const products = [
     image: 'https://picsum.photos/seed/hamburgers/300/300',
     price: 20000,
     isNew: true,
+    quantity: 1,
   },
   {
     name: 'Passport series',
@@ -28,6 +31,7 @@ const products = [
     image: 'https://picsum.photos/seed/potatos/300/300',
     price: 20000,
     isNew: true,
+    quantity: 1,
   },
   {
     name: 'Caffe Mocha',
@@ -35,6 +39,7 @@ const products = [
     image: 'https://picsum.photos/seed/magics/300/300',
     price: 20000,
     isNew: true,
+    quantity: 1,
   },
   {
     name: 'Passport series',
@@ -42,10 +47,19 @@ const products = [
     image: 'https://picsum.photos/seed/rudolf/300/300',
     price: 20000,
     isNew: true,
+    quantity: 1,
   },
 ];
 
 const SupplierDetail = () => {
+  const [isModalOpen, toggleProductDetail] = useState(false);
+  const [productDetail, setProductDetail] = useState({});
+
+  const openProductDetail = product => {
+    setProductDetail(product);
+    toggleProductDetail(true);
+  };
+
   return (
     <Container>
       <Header />
@@ -92,9 +106,17 @@ const SupplierDetail = () => {
       </Detail>
       <Products>
         {products.map(product => (
-          <ProductCard product={product} />
+          <ProductCard
+            product={product}
+            onPress={() => openProductDetail(product)}
+          />
         ))}
       </Products>
+      <ProductDetail
+        visible={isModalOpen}
+        product={productDetail}
+        onRequestClose={() => toggleProductDetail(false)}
+      />
     </Container>
   );
 };

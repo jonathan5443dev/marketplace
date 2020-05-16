@@ -4,7 +4,11 @@ import {hasNotch} from 'react-native-device-info';
 import DefaultTheme from '../themes/default';
 import {Platform, TouchableOpacity} from 'react-native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faSearch, faChevronLeft} from '@fortawesome/free-solid-svg-icons';
+import {
+  faSearch,
+  faTimes,
+  faChevronLeft,
+} from '@fortawesome/free-solid-svg-icons';
 
 const height = () => {
   if (Platform.OS === 'ios' && hasNotch()) {
@@ -36,6 +40,26 @@ export const titleHeader = (navigation, title) => ({
   headerLeft: () => (
     <TouchableOpacity onPress={() => navigation.goBack()}>
       <FontAwesomeIcon icon={faChevronLeft} style={{marginLeft: 16}} />
+    </TouchableOpacity>
+  ),
+});
+
+export const headerWithCloseButton = (navigation, title) => ({
+  title,
+  headerStyle: {
+    backgroundColor: DefaultTheme.white,
+    elevation: 0,
+    borderBottomWidth: 0,
+    height: height(),
+    shadowColor: 'transparent',
+  },
+
+  headerLeft: () => (
+    <TouchableOpacity onPress={() => navigation.goBack()}>
+      <FontAwesomeIcon
+        icon={faTimes}
+        style={{marginLeft: 16, color: 'white'}}
+      />
     </TouchableOpacity>
   ),
 });
