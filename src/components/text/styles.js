@@ -62,4 +62,6 @@ export const FancyText = styled.Text`
   ${$props => styleByType($props.type)}
   color: ${props => theme[props.color]};
   text-decoration-color: ${props => theme[props.color]};
+  text-decoration-line:  ${props => (props.underline ? 'underline' : 'none')}
+
 `;

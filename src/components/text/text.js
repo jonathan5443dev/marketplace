@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 
 import {FancyText} from './styles.js';
 
-const Text = ({children, numberOfLines, type, color}) => {
+const Text = ({children, numberOfLines, type, color, underline}) => {
   return (
-    <FancyText numberOfLines={numberOfLines} type={type} color={color}>
+    <FancyText
+      numberOfLines={numberOfLines}
+      type={type}
+      underline={underline}
+      color={color}>
       {children}
     </FancyText>
   );

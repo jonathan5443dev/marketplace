@@ -1,7 +1,8 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import Text from '../../components/text/text';
-import Button from '../../components/button/button';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faShoppingBag} from '@fortawesome/free-solid-svg-icons';
 import Container from '../../components/container/container';
 import ProductCardBag from '../../components/product-card-bag/product-card-bag';
 import {
@@ -11,6 +12,9 @@ import {
   Empty,
   SupplierName,
   Logo,
+  Checkout,
+  CheckoutDescription,
+  CheckoutIcon,
 } from './styles.js';
 import Header from './header';
 
@@ -62,10 +66,27 @@ const Bag = () => {
       </ProductContainer>
       <Footer>
         <Total>
-          <Text color="gray">{t('bag.total')}</Text>
-          <Text type="headline 3">{shoppingCart.total}$</Text>
+          <Text type="small" underline={true}>
+            {t('bag.clear')}
+          </Text>
+          <Text type="headline 3">
+            {t('bag.total')}
+            {'     '}
+            {shoppingCart.total}$
+          </Text>
         </Total>
-        <Button disabled={isEmpty} value={t('bag.checkout')} />
+        <Checkout>
+          <CheckoutDescription>
+            <Text color="white">Crearemos 2 pedidos</Text>
+            <Text type="smallBold" color="white" underline={true}>
+              {t('bag.confirm')}
+            </Text>
+          </CheckoutDescription>
+          <CheckoutIcon>
+            <FontAwesomeIcon style={{color: 'white'}} icon={faShoppingBag} />
+            <Text color="white">6</Text>
+          </CheckoutIcon>
+        </Checkout>
       </Footer>
     </Container>
   );

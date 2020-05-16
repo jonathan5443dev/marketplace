@@ -15,8 +15,10 @@ export default {
     title: 'Carrito de compra',
     detail: 'Detalle: ',
     checkout: 'Continuar',
-    total: 'Total ',
+    total: 'Total: ',
+    clear: 'Vaciar pedidos',
     empty: 'Nada por aqui',
+    confirm: 'Confirmar pedido',
   },
   profile: {
     title: 'Mi perfil',

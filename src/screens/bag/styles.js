@@ -47,9 +47,7 @@ export const Empty = styled.View`
 
 export const Footer = styled.View`
   width: 100%;
-  padding-horizontal: 16px;
   bottom: 0;
-  padding-bottom: 70px;
   background-color: ${theme.background};
 `;
 
@@ -57,4 +55,25 @@ export const Total = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-vertical: 8px;
+  align-items: center;
+`;
+
+export const Checkout = styled.TouchableOpacity`
+  background-color: ${props => props.theme.primary};
+  flex-direction: row;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 16px;
+  align-self: flex-end;
+`;
+
+export const CheckoutDescription = styled.View`
+  flex: 5;
+`;
+
+export const CheckoutIcon = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 `;
