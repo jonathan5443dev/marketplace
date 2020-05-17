@@ -78,7 +78,7 @@ const AppNavigator = createStackNavigator({
         screen: Home,
       },
       SupplierDetail: {
-        screen: SupplierDetail,
+        screen: Checkout,
       },
       Bag: {
         screen: Bag,

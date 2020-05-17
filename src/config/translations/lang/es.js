@@ -19,6 +19,7 @@ export default {
     clear: 'Vaciar pedidos',
     empty: 'Nada por aqui',
     confirm: 'Confirmar pedido',
+    send: 'Enviar pedido',
   },
   profile: {
     title: 'Mi perfil',
@@ -69,6 +70,9 @@ export default {
     delivery: 'Envio',
     totalAmount: 'Monto Total',
     discount: 'Descuento',
+    contact: 'Dirección y datos de contacto',
+    provider:
+      'El proveedor se pondrá en contacto contigo en el menor tiempo posible para acordar el pago y servicio.',
   },
   addToCart: 'Agregar al carrito',
   orders: {
