@@ -19,6 +19,7 @@ export default {
     clear: 'Empty orders',
     empty: 'Empty',
     confirm: 'Confirm order',
+    send: 'Send order',
   },
   profile: {
     title: 'My profile',
@@ -68,6 +69,9 @@ export default {
     delivery: 'Delivery',
     totalAmount: 'Total Amount',
     discount: 'Discount',
+    contact: 'Address and contact info',
+    provider:
+      'The provider is in contact with you in the shortest possible time to agree on payment and service',
   },
   addToCart: 'Add to cart',
   orders: {

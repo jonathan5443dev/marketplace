@@ -1,31 +1,42 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faCheckCircle} from '@fortawesome/free-solid-svg-icons';
 import {useTranslation} from 'react-i18next';
-
-import Text from '../text/text';
-import Button from '../button/button';
 import theme from '../../config/themes/default';
+import Text from '../text/text';
 
 import * as Tags from './styles';
 
-const ShippingAddressCard = ({name, address, country}) => {
+const ShippingAddressCard = ({name, address, email, phone}) => {
   const {t} = useTranslation();
   return (
     <Tags.Container>
-      <Text type="headline 3" color="black">
-        {t('checkout.shippingAddress')}
-      </Text>
       <Tags.AddressCard>
-        <Tags.Name>
-          <Text type="hightlight">{name}</Text>
-          <Tags.ChangeLink>
-            <Text color="red">{t('checkout.change')}</Text>
-          </Tags.ChangeLink>
-        </Tags.Name>
+        <Text type="smallBold" color="gray">
+          {t('checkout.contact')}
+        </Text>
+        <Tags.Check>
+          <FontAwesomeIcon
+            style={{color: theme.primary}}
+            icon={faCheckCircle}
+          />
+        </Tags.Check>
+        <Text type="highlight">{name}</Text>
         <Tags.Address>
-          <Text type="hightlight">{address}</Text>
-          <Text type="hightlight">{country}</Text>
+          <Text type="small" color="gray">
+            {address}
+          </Text>
+          <Text type="small" color="gray">
+            {email}
+          </Text>
+          <Text type="small" color="gray">
+            {phone}
+          </Text>
         </Tags.Address>
+        <Tags.ChangeLink>
+          <Text color="white">{t('checkout.change')}</Text>
+        </Tags.ChangeLink>
       </Tags.AddressCard>
     </Tags.Container>
   );
@@ -34,11 +45,11 @@ const ShippingAddressCard = ({name, address, country}) => {
 ShippingAddressCard.propTypes = {
   name: PropTypes.string.isRequired,
   address: PropTypes.string.isRequired,
-  country: PropTypes.string
+  country: PropTypes.string,
 };
 
 ShippingAddressCard.defaultProps = {
-  country: ''
+  country: '',
 };
 
 export default ShippingAddressCard;

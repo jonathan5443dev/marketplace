@@ -1,18 +1,30 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import Text from '../../components/text/text';
-import Button from '../../components/button/button';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faShoppingBag} from '@fortawesome/free-solid-svg-icons';
 import Container from '../../components/container/container';
 import ShippingAddressCard from '../../components/shipping-address-card/shipping-address-card';
-import PaymentMethodList from '../../components/payment-method-list/payment-method-list';
-import DeliveryMethodCard from '../../components/delivery-method-card/delivery-method-card';
 
-import * as Tags from './styles';
+import Header from './header';
+import Building from '../../assets/images/building.png';
+import {
+  BuildingImage,
+  CheckoutContainer,
+  CheckoutDescription,
+  CheckoutIcon,
+  SupplierName,
+  Logo,
+  Total,
+  SupplierTotal,
+  SupplierInfo,
+} from './styles';
 
-const mockUser = {
-  name: 'Jane Doe',
-  address: '3 Newbride Court',
-  country: 'Chino Hills, CA 91709, United States',
+const mockAddress = {
+  name: 'Apto',
+  email: 'jonathan5443@gmail.com',
+  phone: '3194926255',
+  address: ' 3 Chino Hills, CA 91709, United States',
   paymentMethod: [
     {
       id: 'master',
@@ -20,68 +32,76 @@ const mockUser = {
       entity: 'mastercard',
     },
   ],
-  deliveryMethodsAvailable: [
-    {
-      id: '1',
-      name: 'fedex',
-      time: ' 1 - 3 days',
-    },
-    {
-      id: '2',
-      name: 'dhl',
-      time: ' 3 - 5 days',
-    },
-    {
-      id: '3',
-      name: 'fedex',
-      time: ' 10 - 20 days',
-    },
-    {
-      id: '4',
-      name: 'dhl',
-      time: ' 10 - 20 days',
-    },
-  ],
 };
 
 const Checkout = () => {
   const {t} = useTranslation();
+  const shoppingCart = {
+    suppliers: {
+      Starbucks: {
+        logo: 'https://picsum.photos/700/300',
+        products: [{name: 'Caffe mocha', quantity: 3, price: 2700}],
+      },
+      Dominos: {
+        logo: 'https://picsum.photos/700/300',
+        products: [
+          {name: 'Pizza mocha', quantity: 1, price: 2700},
+          {name: 'Roll mocha', quantity: 2, price: 700},
+        ],
+      },
+    },
+    total: 20000,
+  };
+
+  const renderSuppliers = () => {
+    return Object.keys(shoppingCart.suppliers).map(supplier => (
+      <SupplierName>
+        <Logo source={{uri: shoppingCart.suppliers[supplier].logo}} />
+        <SupplierInfo>
+          <Text type="highlight">{supplier}</Text>
+          <Text type="small" color="gray">
+            2 productos
+          </Text>
+        </SupplierInfo>
+        <SupplierTotal>
+          <Text type="highlight">$5000</Text>
+        </SupplierTotal>
+      </SupplierName>
+    ));
+  };
   return (
     <Container>
+      <Header />
+      <BuildingImage source={Building} />
+      {renderSuppliers()}
       <ShippingAddressCard
-        name={mockUser.name}
-        address={mockUser.address}
-        country={mockUser.country}
+        name={mockAddress.name}
+        address={mockAddress.address}
+        email={mockAddress.email}
+        phone={mockAddress.phone}
       />
-      <PaymentMethodList paymentMethods={mockUser.paymentMethod} />
-      <DeliveryMethodCard deliveryMethods={mockUser.deliveryMethodsAvailable} />
-      <Tags.OrderSummary>
-        <Tags.AmountContainer>
-          <Text type="body" color="black">
-            {t('checkout.order')}
+      <Text>{t('checkout.provider')}</Text>
+      <Total>
+        <Text type="small" underline={true}>
+          {t('bag.clear')}
+        </Text>
+        <Text type="headline 3">
+          {t('bag.total')}
+          {'     '}${shoppingCart.total}
+        </Text>
+      </Total>
+      <CheckoutContainer>
+        <CheckoutDescription>
+          <Text color="white">Crearemos 2 pedidos</Text>
+          <Text type="smallBold" color="white" underline={true}>
+            {t('bag.send')}
           </Text>
-          <Text type="headline 3" color="black">
-            12$
-          </Text>
-        </Tags.AmountContainer>
-        <Tags.AmountContainer>
-          <Text type="body" color="black">
-            {t('checkout.delivery')}
-          </Text>
-          <Text type="headline 3" color="black">
-            15$
-          </Text>
-        </Tags.AmountContainer>
-        <Tags.AmountContainer>
-          <Text type="highlight" color="black">
-            {t('checkout.summary')}
-          </Text>
-          <Text type="headline 3" color="black">
-            127$
-          </Text>
-        </Tags.AmountContainer>
-        <Button value={t('checkout.submitOrder')} />
-      </Tags.OrderSummary>
+        </CheckoutDescription>
+        <CheckoutIcon>
+          <FontAwesomeIcon style={{color: 'white'}} icon={faShoppingBag} />
+          <Text color="white">6</Text>
+        </CheckoutIcon>
+      </CheckoutContainer>
     </Container>
   );
 };
