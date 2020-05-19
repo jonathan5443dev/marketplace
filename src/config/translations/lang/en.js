@@ -84,6 +84,9 @@ export default {
     delivered: 'Delivered',
     processing: 'Processing',
     cancelled: 'Cancelled',
+    success: 'Your orders have been shipped successfully',
+    deliverSoon:
+      'The supplier will contact you shortly, and from the beginning you will be able to track each step of your order.',
   },
   orderDetail: {
     units: 'Units',

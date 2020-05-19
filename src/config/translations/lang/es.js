@@ -85,6 +85,9 @@ export default {
     delivered: 'Enviado',
     procesing: 'Procesando',
     cancelled: 'Cancelado',
+    success: 'Tus pedidos se han enviado exitosamente!',
+    deliverSoon:
+      'Dentro de poco el proveedor se pondrá en contacto contigo, y desde el inicio podrás rastrear cada paso de su pedido.',
   },
   orderDetail: {
     units: 'Unidades',
