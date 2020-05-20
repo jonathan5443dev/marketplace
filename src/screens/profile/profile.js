@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux';
 import Text from '../../components/text/text';
 import {useTranslation} from 'react-i18next';
 import AvatarImage from '../../assets/images/product-1.png';
+import Button from '../../components/button/button';
 import {
   List,
   Option,
@@ -13,6 +14,7 @@ import {
   Container,
   OptionsContainer,
   CloseSession,
+  SellContainer,
 } from './styles';
 import profileActions from '../../redux/reducers/profile-settings';
 import ordersActions from '../../redux/reducers/orders';
@@ -66,6 +68,9 @@ const Profile = () => {
           </Information>
           <Avatar source={AvatarImage} />
         </Header>
+        <SellContainer>
+          <Button value="Vender gratis" />
+        </SellContainer>
         <OptionsContainer>
           <Text type="headline 3">Ventas</Text>
           <List

@@ -41,9 +41,7 @@ export const OptionsContainer = styled.View`
   padding-top: 10px;
 `;
 
-export const Container = styled(Wrapper)`
-  padding: 0;
-`;
+export const Container = styled.ScrollView``;
 
 export const CloseSession = styled.TouchableOpacity`
   padding-horizontal: 20px;
@@ -51,4 +49,8 @@ export const CloseSession = styled.TouchableOpacity`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+`;
+
+export const SellContainer = styled.View`
+  padding-horizontal: 20px;
 `;
