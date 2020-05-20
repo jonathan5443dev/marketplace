@@ -1,18 +1,33 @@
 import React from 'react';
-import Container from '../../components/container/container';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import Text from '../../components/text/text';
 import {useTranslation} from 'react-i18next';
 import AvatarImage from '../../assets/images/product-1.png';
-import {List, Option, Header, Avatar, Information} from './styles';
+import {
+  List,
+  Option,
+  Header,
+  Avatar,
+  Information,
+  SafeArea,
+  Container,
+  OptionsContainer,
+  CloseSession,
+} from './styles';
 import loginActions from '../../redux/reducers/login';
 import profileActions from '../../redux/reducers/profile-settings';
 import ordersActions from '../../redux/reducers/orders';
 import addressesActions from '../../redux/reducers/addresses';
+import theme from '../../config/themes/default';
+
+const user = {
+  name: 'Vanessa Hayed',
+  lastName: 'Torres',
+  email: 'vanessa.torres@marketplace.com',
+};
 
 const Profile = () => {
   const {t} = useTranslation();
-  const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const options = [
     {
@@ -33,35 +48,54 @@ const Profile = () => {
       subTitle: t('profile.notificationsPassword'),
       action: () => dispatch(profileActions.startProfileSettingsFlow()),
     },
-    {
-      id: '4',
-      title: t('profile.logout'),
-      subTitle: t('profile.logoutSubtitle'),
-      action: () => dispatch(loginActions.logout()),
-    },
   ];
   const renderOption = option => (
     <Option onPress={option.action}>
-      <Text type="highlight">{option.title}</Text>
-      <Text type="small">{option.subTitle}</Text>
+      <Text type="body">{option.title}</Text>
     </Option>
   );
   return (
-    <Container>
-      <Text type="headline">{t('profile.title')}</Text>
-      <Header>
-        <Avatar source={AvatarImage} />
-        <Information>
-          <Text type="headline 3">{`${user.name} ${user.lastName}`}</Text>
-          <Text> {`${user.email}`}</Text>
-        </Information>
-      </Header>
-      <List
-        data={options}
-        renderItem={({item}) => renderOption(item)}
-        keyExtractor={item => item.id}
-      />
-    </Container>
+    <SafeArea>
+      <Container>
+        <Header>
+          <Information>
+            <Text type="headline 2">Hola</Text>
+            <Text type="headline 3">{`${user.name} ${user.lastName}`}</Text>
+            <Text> {`${user.email}`}</Text>
+          </Information>
+          <Avatar source={AvatarImage} />
+        </Header>
+        <OptionsContainer>
+          <Text type="headline 3">Ventas</Text>
+          <List
+            data={options}
+            renderItem={({item}) => renderOption(item)}
+            keyExtractor={item => item.id}
+          />
+        </OptionsContainer>
+        <OptionsContainer>
+          <Text type="headline 3">General</Text>
+          <List
+            data={options}
+            renderItem={({item}) => renderOption(item)}
+            keyExtractor={item => item.id}
+          />
+        </OptionsContainer>
+        <OptionsContainer>
+          <Text type="headline 3">Information</Text>
+          <List
+            data={options}
+            renderItem={({item}) => renderOption(item)}
+            keyExtractor={item => item.id}
+          />
+        </OptionsContainer>
+        <CloseSession>
+          <Text type="highlight" color="redLigth">
+            Close session
+          </Text>
+        </CloseSession>
+      </Container>
+    </SafeArea>
   );
 };
 
