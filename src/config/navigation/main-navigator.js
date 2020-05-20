@@ -25,7 +25,7 @@ import SupplierDetail from '../../screens/supplier-detail/supplier-detail';
 import Profile from '../../screens/profile/profile';
 import Checkout from '../../screens/checkout/checkout';
 import ProfileSettings from '../../screens/profile-settings/profile-settings';
-
+import OrderSuccess from '../../screens/order-success/order-success';
 import Orders from '../../screens/orders/orders';
 import OrderDetail from '../../screens/order-detail/order-detail';
 import ProductDetail from '../../screens/product-detail/product-detail';
@@ -72,13 +72,16 @@ const AppNavigator = createStackNavigator({
     navigationOptions: ({navigation}) =>
       searchHeader(navigation, 'Order Details'),
   },
+  OrderSuccess: {
+    screen: OrderSuccess,
+  },
   TabBar: createBottomTabNavigator(
     {
       Home: {
         screen: Home,
       },
       SupplierDetail: {
-        screen: Checkout,
+        screen: OrderSuccess,
       },
       Bag: {
         screen: Bag,
