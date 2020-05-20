@@ -45,7 +45,10 @@ export const Container = styled(Wrapper)`
   padding: 0;
 `;
 
-export const CloseSession = styled.View`
+export const CloseSession = styled.TouchableOpacity`
   padding-horizontal: 20px;
   color: ${theme.redLigth};
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 `;

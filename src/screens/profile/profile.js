@@ -14,10 +14,11 @@ import {
   OptionsContainer,
   CloseSession,
 } from './styles';
-import loginActions from '../../redux/reducers/login';
 import profileActions from '../../redux/reducers/profile-settings';
 import ordersActions from '../../redux/reducers/orders';
 import addressesActions from '../../redux/reducers/addresses';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faPowerOff} from '@fortawesome/free-solid-svg-icons';
 import theme from '../../config/themes/default';
 
 const user = {
@@ -90,6 +91,7 @@ const Profile = () => {
           />
         </OptionsContainer>
         <CloseSession>
+          <FontAwesomeIcon style={{color: theme.redLigth}} icon={faPowerOff} />
           <Text type="highlight" color="redLigth">
             Close session
           </Text>
