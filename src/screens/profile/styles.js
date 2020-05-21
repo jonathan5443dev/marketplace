@@ -53,4 +53,5 @@ export const CloseSession = styled.TouchableOpacity`
 
 export const SellContainer = styled.View`
   padding-horizontal: 20px;
+  margin-bottom: 20px;
 `;

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {useDispatch} from 'react-redux';
 import Text from '../../components/text/text';
@@ -32,26 +33,58 @@ const user = {
 const Profile = () => {
   const {t} = useTranslation();
   const dispatch = useDispatch();
-  const options = [
+
+  const saleOptions = [
     {
       id: '1',
-      title: t('profile.shippingAddresses'),
+      title: t('profile.publications'),
       subTitle: `3 ${t('profile.addresses')}`,
       action: () => dispatch(addressesActions.startAddressesFlow()),
     },
     {
       id: '2',
-      title: t('profile.myOrders'),
+      title: t('profile.support'),
       subTitle: `3 ${t('profile.orders')}`,
       action: () => dispatch(ordersActions.startOrdersFlow()),
     },
     {
       id: '3',
-      title: t('profile.settings'),
+      title: t('profile.sales'),
       subTitle: t('profile.notificationsPassword'),
       action: () => dispatch(profileActions.startProfileSettingsFlow()),
     },
   ];
+
+  const generalOptions = [
+    {
+      id: '1',
+      title: t('profile.myAccount'),
+      subTitle: `3 ${t('profile.myAccount')}`,
+      action: () => dispatch(addressesActions.startAddressesFlow()),
+    },
+    {
+      id: '2',
+      title: t('profile.addresses'),
+      subTitle: `3 ${t('profile.addresses')}`,
+      action: () => dispatch(ordersActions.startOrdersFlow()),
+    },
+  ];
+
+  const informationOptions = [
+    {
+      id: '1',
+      title: t('profile.myAccount'),
+      subTitle: `3 ${t('profile.myAccount')}`,
+      action: () => dispatch(addressesActions.startAddressesFlow()),
+    },
+    {
+      id: '2',
+      title: t('profile.addresses'),
+      subTitle: `3 ${t('profile.addresses')}`,
+      action: () => dispatch(ordersActions.startOrdersFlow()),
+    },
+  ];
+
   const renderOption = option => (
     <Option onPress={option.action}>
       <Text type="body">{option.title}</Text>
@@ -62,43 +95,46 @@ const Profile = () => {
       <Container>
         <Header>
           <Information>
-            <Text type="headline 2">Hola</Text>
+            <Text type="headline 2">{t('hi')}</Text>
             <Text type="headline 3">{`${user.name} ${user.lastName}`}</Text>
             <Text> {`${user.email}`}</Text>
           </Information>
           <Avatar source={AvatarImage} />
         </Header>
         <SellContainer>
-          <Button value="Vender gratis" />
+          <Button value={t('freeSale')} />
         </SellContainer>
         <OptionsContainer>
-          <Text type="headline 3">Ventas</Text>
+          <Text type="headline 3">{t('sales')}</Text>
           <List
-            data={options}
+            data={saleOptions}
             renderItem={({item}) => renderOption(item)}
             keyExtractor={item => item.id}
           />
         </OptionsContainer>
         <OptionsContainer>
-          <Text type="headline 3">General</Text>
+          <Text type="headline 3">{t('general')}</Text>
           <List
-            data={options}
+            data={generalOptions}
             renderItem={({item}) => renderOption(item)}
             keyExtractor={item => item.id}
           />
         </OptionsContainer>
         <OptionsContainer>
-          <Text type="headline 3">Information</Text>
+          <Text type="headline 3">{t('information')}</Text>
           <List
-            data={options}
+            data={informationOptions}
             renderItem={({item}) => renderOption(item)}
             keyExtractor={item => item.id}
           />
         </OptionsContainer>
         <CloseSession>
-          <FontAwesomeIcon style={{color: theme.redLigth}} icon={faPowerOff} />
+          <FontAwesomeIcon
+            style={{color: theme.redLigth, marginRight: 10}}
+            icon={faPowerOff}
+          />
           <Text type="highlight" color="redLigth">
-            Close session
+            {t('closeSession')}
           </Text>
         </CloseSession>
       </Container>
