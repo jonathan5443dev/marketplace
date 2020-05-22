@@ -31,6 +31,12 @@ export default {
     notificationsPassword: 'Notifications, password',
     logout: 'Logout',
     logoutSubtitle: 'Lorem ipsum ammet',
+    publications: 'Publicaciones',
+    support: 'Soporte',
+    sales: 'Ventas',
+    myAccount: 'Mi cuenta',
+    help: 'Ayuda',
+    terms: 'Términos & condiciones',
   },
   login: {
     title: 'Login',
@@ -95,4 +101,10 @@ export default {
     leaveFeedback: 'Leave Feedback',
     reorder: 'Reorder',
   },
+  hi: 'Hello',
+  freeSale: 'Free sale',
+  general: 'General',
+  information: 'Information',
+  sales: 'Sales',
+  closeSession: 'Close session',
 };

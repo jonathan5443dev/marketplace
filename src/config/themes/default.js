@@ -9,6 +9,7 @@ export default {
   whiteBackground: '#E5E5E5',
   pureWhite: '#FFFFFF',
   red: '#EB001B',
+  redLigth: '#E66767',
   green: '#2AA952',
   fontFamily: 'Poppins-Regular',
   fontFamilyBold: 'Poppins-Bold',
