@@ -12,7 +12,11 @@ const Search = props => {
         <IconContainer>
           <FontAwesomeIcon style={{color: theme.gray}} icon={faSearch} />
         </IconContainer>
-        <InputField {...props} autoCapitalize="none" />
+        <InputField
+          {...props}
+          placeholder={props.placeholder}
+          autoCapitalize="none"
+        />
       </InputContainer>
     </>
   );
@@ -22,6 +26,7 @@ Search.propTypes = {
   error: PropTypes.string,
   icon: PropTypes.number,
   editable: PropTypes.bool,
+  placeholder: PropTypes.string,
   label: PropTypes.string.isRequired,
 };
 
@@ -29,6 +34,7 @@ Search.defaultProps = {
   error: undefined,
   icon: undefined,
   editable: true,
+  placeholder: '',
 };
 
 export default Search;

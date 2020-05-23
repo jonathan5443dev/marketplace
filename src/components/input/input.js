@@ -47,7 +47,7 @@ const Input = props => {
           {...props}
           onFocus={() => setIsFocus(true)}
           onBlur={() => setIsFocus(false)}
-          placeholderTextColor={inputColor()}
+          placeholderTextColor={theme.grey}
           autoCapitalize="none"
           multiline={props.multiline}
           numberOfLines={4}

@@ -31,8 +31,6 @@ export const Header = styled.View`
   background-color: ${({theme}) => theme.primary};
 `;
 
-export const Content = styled.View`
-  padding: 16px;
-`;
+export const Content = styled.View``;
 
 export const Back = styled.TouchableOpacity``;

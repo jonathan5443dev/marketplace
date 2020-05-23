@@ -1,6 +1,9 @@
 import React from 'react';
 import MultiStepForm from '../../components/multi-step-form/multi-step-form';
 import CreateProductName from './steps/name';
+import CreateProductType from './steps/type';
+
+import CreateProductCategory from './steps/category';
 
 const CreateProduct = () => {
   return (
@@ -11,20 +14,12 @@ const CreateProduct = () => {
           content: <CreateProductName />,
         },
         {
-          title: 'indica tu producto, marca y model',
-          content: <CreateProductName />,
+          title: '¿Cómo clasificas tu producto?',
+          content: <CreateProductType />,
         },
         {
-          title: 'indica tu producto, marca y model',
-          content: <CreateProductName />,
-        },
-        {
-          title: 'indica tu producto, marca y model',
-          content: <CreateProductName />,
-        },
-        {
-          title: 'indica tu producto, marca y model',
-          content: <CreateProductName />,
+          title: '¿Qué opción define a tu producto?',
+          content: <CreateProductCategory />,
         },
       ]}
     />
