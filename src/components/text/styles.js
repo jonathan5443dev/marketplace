@@ -18,6 +18,11 @@ const styleByType = type => {
         'font-family': theme.fontFamilyBold,
         'font-size': '18px',
       };
+    case 'headline 4':
+      return {
+        'font-family': theme.fontFamily,
+        'font-size': '23px',
+      };
     case 'small':
       return {
         'font-family': theme.fontFamily,

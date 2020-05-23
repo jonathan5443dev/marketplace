@@ -21,7 +21,7 @@ import CreateAddress from '../../screens/create-address/create-address';
 
 import SuppliersList from '../../screens/suppliers-list/suppliers-list';
 import SupplierDetail from '../../screens/supplier-detail/supplier-detail';
-
+import CreateProduct from '../../screens/create-product/create-product';
 import Profile from '../../screens/profile/profile';
 import Checkout from '../../screens/checkout/checkout';
 import ProfileSettings from '../../screens/profile-settings/profile-settings';
@@ -81,7 +81,7 @@ const AppNavigator = createStackNavigator({
         screen: Home,
       },
       SupplierDetail: {
-        screen: OrderSuccess,
+        screen: CreateProduct,
       },
       Bag: {
         screen: Bag,
