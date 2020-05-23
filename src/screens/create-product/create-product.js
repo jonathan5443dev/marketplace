@@ -7,7 +7,7 @@ const CreateProduct = () => {
     <MultiStepForm
       steps={[
         {
-          title: 'indica tu producto, marca y model',
+          title: 'Indica tu producto, marca y model',
           content: <CreateProductName />,
         },
         {

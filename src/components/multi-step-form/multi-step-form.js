@@ -18,9 +18,9 @@ const MultiStepForm = ({defaultStep, steps}) => {
   };
 
   const previousStep = () => {
-    const offset = (currentStep - 1) * deviceWidth;
+    const offset = (currentStep - 2) * deviceWidth;
     scrolling.current.scrollTo({x: offset, y: 0, animated: true});
-    setCurrentStep(currentStep - 1);
+    currentStep !== 1 && setCurrentStep(currentStep - 1);
   };
 
   return (
