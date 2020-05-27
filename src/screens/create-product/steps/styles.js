@@ -46,3 +46,29 @@ export const ImageSelection = styled.View`
   justify-content: center;
   align-items: center;
 `;
+
+export const ConfirmationItem = styled.View`
+  justify-content: center;
+  width: 100%;
+  padding-vertical: 10px;
+  padding-horizontal: 16px;
+  border-bottom-width: 1px;
+  border-color: ${({theme}) => theme.whiteBackground};
+`;
+
+export const PublishContainer = styled.View`
+  margin-top: 50px;
+  padding-horizontal: 16px;
+`;
+
+export const PhotoCarousel = styled.View`
+  height: 100px;
+  width: 100%;
+  flex-direction: row;
+`;
+export const PhotoItem = styled.Image`
+  height: 100px;
+  margin-right: 2px;
+  border-radius: 15px
+  width: 100px;
+`;
