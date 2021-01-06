@@ -23,7 +23,7 @@
     "@react-native-firebase/firestore": "^6.4.0",
     "@react-navigation/native": "^5.1.4",
     "add": "^2.0.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "formik": "^2.1.4",
     "i18next": "^19.3.4",
     "react": "16.11.0",
